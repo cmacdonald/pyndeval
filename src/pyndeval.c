@@ -75,7 +75,7 @@ Qrels_init(QrelsObject *self, PyObject *args, PyObject *kwds)
         return -1;
 
     if (!PyList_Check(qrels)) {
-        return NULL;
+        return -1;
     }
 
     self->qrels = pyProcessQrels(qrels, self->cutoff, &self->has_multiple_subtopics);
