@@ -11,16 +11,17 @@ jobs:
     
     strategy:
       matrix:
-        python-version: [3.7, 3.8]
+        python-version: [3.8, 3.12]
         os: ['ubuntu-latest', 'macOs-latest', 'windows-latest']
         architecture: ['x64']
 
     runs-on: ${{ matrix.os }}
     steps:
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+    
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
